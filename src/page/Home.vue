@@ -2,10 +2,10 @@
 	<div class="content" >
 	 	<swiper></swiper>
 		<search></search>
-	    
+
 		<lay-out></lay-out>
 	    <div class="card" style="margin:0.5rem">
-	    	<div class="card-header">最新热歌:</div>
+	    	<div class="card-header">最新热歌推荐</div>
 		    <div class="card-content">
 		      <div class="list-block media-list">
 		        <ul>
@@ -20,16 +20,16 @@
 		              <div class="item-subtitle">{{song_list.author}}</div>
 		            </div>
 		          </li>
-		        </ul> 
+		        </ul>
 		      </div>
 		    </div>
 	 	</div>
-		
+
 		<!-- <card-list></card-list> -->
 
 		<loading-action v-show="isLoading"></loading-action>
 	</div>
-		
+
 </template>
 <script>
 	import Swiper from '../components/home/Swiper.vue'
@@ -65,7 +65,7 @@
 					setTimeout(()=>{
 						this.song_lists = msg.data.result.list
 			        	this.isLoading = false
-					},1000)  
+					},1000)
 			    }, function (ret) {
 			        console.log("请求失败"+ret)
 			    });
@@ -73,12 +73,12 @@
 			goSong(){
 				this.$router.push({name:'Song'})
 			}
-			
+
 		}
 
 	}
 </script>
 <style scoped>
-	
-	
+
+
 </style>
