@@ -2,7 +2,6 @@
 	<div class="content" >
 	 	<swiper></swiper>
 		<search></search>
-	 	<h2>热门推荐</h2>
 	    
 		<lay-out></lay-out>
 	    <div class="card" style="margin:0.5rem">

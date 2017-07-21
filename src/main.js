@@ -7,7 +7,6 @@ import resource from 'vue-resource'
 import VueSwiper from 'vue-awesome-swiper'
 import store from './store/'
 
-
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 

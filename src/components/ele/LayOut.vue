@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2 class="hh-bd">歌曲榜单</h2>
+    <h2 class="hh-bd">热门推荐</h2>
     <el-button @click=''>新歌榜</el-button>  
     <el-button @click='' type="primary">热歌榜</el-button>  
     <el-button @click='' type="text">摇滚榜</el-button>  
