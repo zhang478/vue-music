@@ -5,6 +5,19 @@
 
 > A Vue.js project
 
+##技术栈
+
+vue
+vuex
+vue-router
+vue-awesome-swiper
+axios
+element-ui
+better-scroll
+
+
+
+
 ## Build Setup
 
 ``` bash

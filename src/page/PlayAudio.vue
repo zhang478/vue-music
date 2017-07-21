@@ -51,8 +51,8 @@
  		methods:{
  			
  			getRecommend:function(){
-				this.$http.jsonp(
-					"http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=15",
+				this.$http.get(
+					"/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=15",
 				).then(function (msg) {
 					
 			        setTimeout(()=>{
@@ -63,8 +63,8 @@
 								this._initScroll()
 							})	
 						},800)
-			    }, function (ret) {
-			        console.log("请求失败"+ret)
+			    }.bind(this)).catch(function(err){
+			    	console.log(err)
 			    });
 			},
 			_initScroll:function () {         // 2 函数声明
@@ -86,8 +86,8 @@
       		},
       		downLoad(){
       			this.isdown = true
-				this.$http.jsonp(
-					"http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=2",
+				this.$http.get(
+					"/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=2",
 				).then(function (msg) {
 					setTimeout(() => {
 						var data = msg.data.result.list
@@ -100,14 +100,14 @@
 						})	
 					},1500)
 			        
-			    }, function (ret) {
-			        console.log("请求失败"+ret)
+			    }.bind(this)).catch(function(err){
+			    	console.log(err)
 			    });
       		},
       		upload(){
 				this.isload = true
-				this.$http.jsonp(
-					"http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=3",
+				this.$http.get(
+					"/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=3",
 				).then(function (msg) {
 					setTimeout(() => {
 						var data = msg.data.result.list
@@ -121,8 +121,8 @@
 						})	
 					},1000)
 			        
-			    }, function (ret) {
-			        console.log("请求失败"+ret)
+			    }.bind(this)).catch(function(err){
+			    	console.log(err)
 			    });
       		}
  		}

@@ -42,7 +42,6 @@
 		data(){
 			return{
 				song_lists:"",
-				show_lists:"",
 				isLoading:true
 			}
 		},
@@ -58,17 +57,16 @@
 		},
 		methods:{
 			getRecommend:function(){
-				this.$http.jsonp(
-					"http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=10",
+				this.$http.get(
+					"/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.getRecommandSongList&song_id=877578&num=10",
 				).then(function (msg) {
-					// console.log(msg.data.result)
 					setTimeout(()=>{
 						this.song_lists = msg.data.result.list
-			        	this.isLoading = false
+						this.isLoading = false
 					},1000)
-			    }, function (ret) {
-			        console.log("请求失败"+ret)
-			    });
+			    }.bind(this)).catch(function(err){
+				  	console.log(err)
+				});
 			},
 			goSong(){
 				this.$router.push({name:'Song'})

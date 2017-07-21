@@ -83,8 +83,8 @@
 		        this.$nextTick(function(){
 		        	this._initScroll()
 		        })
-		    }, function (ret) {
-		        console.log("请求失败"+ret)
+		    }.bind(this)).catch(function(err){
+				console.log(err)
 		    });
 		},
 		methods:{

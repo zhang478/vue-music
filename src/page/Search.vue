@@ -70,22 +70,22 @@
 			},
 			searchSong:function(){
 				// var que_value = document.getElementById('search_song').value
-			    this.$http.jsonp(
-			    	'http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&calback=&from=webapp_music&method=baidu.ting.search.catalogSug', 
+			    this.$http.get(
+			    	'/ting?format=json&calback=&from=webapp_music&method=baidu.ting.search.catalogSug&query=海阔天空', 
 			    	// "http://music.163.com/api/search/get/?type=1&limit=10&s=海阔天空"
-			    	{
-			    		params :{
-			    			// query:que_value
-			    			query:"小幸运"
-			    		}
-			    	},
-			    	{ credentials: true }
+			    	// {
+			    	// 	params :{
+			    	// 		// query:que_value
+			    	// 		query:"小幸运"
+			    	// 	}
+			    	// },
+			    	// { credentials: true }
 		    	).then(function (msg) {
-		    		// console.log(msg.data)
+		    		console.log(msg.data)
 			        this.song_allData = msg.data
 			        this.isShow = true
-			    }, function (ret) {
-			        console.log("请求失败"+ret)
+			    }.bind(this)).catch(function(err){
+			    	console.log(err)
 			    });
 			},
 			searchSonger:function(){
@@ -99,8 +99,8 @@
 				).then(function (msg) {
 					// console.log(msg.data)
 			        // this.song_lists = msg.data.result.list
-			    }, function (ret) {
-			        console.log("请求失败"+ret)
+			    }.bind(this)).catch(function(err){
+			    	console.log(err)
 			    });
 			},
 			showPanel:function(p){
