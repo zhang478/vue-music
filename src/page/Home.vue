@@ -46,7 +46,8 @@
 			}
 		},
 		created(){
-			this.getRecommend()
+			// this.getRecommend()
+			this.getMV()
 		},
 		components:{
 			Swiper,
@@ -70,6 +71,22 @@
 			},
 			goSong(){
 				this.$router.push({name:'Song'})
+			},
+			getMV(){
+				this.$http.get("/api//mv/detail", {
+					    params: {
+					      	id: 12345
+					    }
+				  	}
+				).then(function (msg) {
+					console.log(msg)
+					// setTimeout(()=>{
+					// 	this.song_lists = msg.data.result.list
+					// 	this.isLoading = false
+					// },1000)
+			    }.bind(this)).catch(function(err){
+				  	console.log(err)
+				});
 			}
 
 		}
