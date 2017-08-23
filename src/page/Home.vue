@@ -46,8 +46,8 @@
 			}
 		},
 		created(){
-			// this.getRecommend()
-			this.getMV()
+			this.getRecommend()
+			// this.getMV()
 		},
 		components:{
 			Swiper,
@@ -73,7 +73,7 @@
 				this.$router.push({name:'Song'})
 			},
 			getMV(){
-				this.$http.get("/api//mv/detail", {
+				this.$http.get("/api//mv/detail/", {
 					    params: {
 					      	id: 12345
 					    }
