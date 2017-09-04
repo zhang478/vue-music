@@ -33,12 +33,12 @@
 		},
 		methods:{
 			getSong:function(){
-				this.$http.jsonp(
+				this.$http.get(
 					// 'http://s.music.163.com/search/get/?type=1&limit=5&s=海阔天空'
-					"http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.playAAC&songid=877578"
+					"/ting?format=json&calback=&from=webapp_music&method=baidu.ting.song.playAAC&songid=877578"
 				).then(function(msg){
 					// console.log(msg.data)
-					this.song = msg.data
+					// this.song = msg.data
 					
 				},function(ret){
 					console.log("shibai"+ret)

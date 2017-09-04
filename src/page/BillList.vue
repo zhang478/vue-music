@@ -103,7 +103,7 @@
 			        this.$nextTick(function(){
 			        	this._initScroll()
 			        })
-			    }, function (ret) {
+			    }.bind(this)).catch(function (ret) {
 			        console.log("请求失败"+ret)
 			    });
 			},
@@ -133,7 +133,7 @@
 			        	this.footerScroll.refresh()
 			        	this.footerScroll.scrollTo(0,0,0)
 			        })
-			    }, function (ret) {
+			    }.bind(this)).catch(function (ret) {
 			        console.log("请求失败"+ret)
 			    });
 			}
